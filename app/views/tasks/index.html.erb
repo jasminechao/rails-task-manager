@@ -1,11 +1,13 @@
 <h1>Tasks</h1>
-<p>Here are all your tasks:</p>
 
-<% @tasks.each do |task| %>
-<h4><%= link_to task.name, task_path(task) %></h4>
-<p><%= link_to "Edit me",  edit_task_path(task), class: "btn btn-primary btn-sm" %>
-<%= link_to "Delete me", task_path(task), class: "btn btn-danger btn-sm", method: :delete  %></p>
-<% end %>
+
+<ul>
+  <% @tasks.each do |task| %>
+  <li><h4><%= link_to task.name, task_path(task) %></h4></li>
+  <p><%= link_to "Edit me",  edit_task_path(task), class: "btn btn-primary btn-sm" %>
+  <%= link_to "Delete me", task_path(task), class: "btn btn-danger btn-sm", method: :delete  %></p>
+  <% end %>
+</ul>
 
 <br>
 <div>
