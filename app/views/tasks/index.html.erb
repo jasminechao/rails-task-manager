@@ -2,9 +2,12 @@
 <p>Here are all your tasks:</p>
 
 <% @tasks.each do |task| %>
-<p><%= link_to task.name, task_path(task) %></p>
-<p><%= link_to "Edit me",  edit_task_path(task) %></p>
-<p><%= link_to "Delete me", task_path(task), method: :delete  %></p>
+<h4><%= link_to task.name, task_path(task) %></h4>
+<p><%= link_to "Edit me",  edit_task_path(task), class: "btn btn-primary btn-sm" %>
+<%= link_to "Delete me", task_path(task), class: "btn btn-danger btn-sm", method: :delete  %></p>
 <% end %>
 
-<%= link_to "Add a new task", new_task_path %>
+<br>
+<div>
+  <%= link_to "Add a new task", new_task_path, class: "btn btn-success"%>
+</div>
